@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project Compass - (My International Travels)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!--Title-->
+    <h1 class="title"> Project <img class="compass_icon"src="file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/compass.png"> Compass - (My International Travels)</h1>
+    <!-- Map Section -->
+  <section id="map">
+    <div class="container">
+      <div class="map">
+  <script async defer
+      src="https://www.google.com/maps/d/edit?hl=en&mid=1s7Lcl2j4iySEdYsvxPc95l1m10kdJjLe&ll=32.515464137534124%2C-54.0790960249999&z=4"></script>
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1s7Lcl2j4iySEdYsvxPc95l1m10kdJjLe" style="width:750px; height:450px; border:5px solid red"></iframe>
+      </div>
+    </div>
+  </section>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Locaion Coordinates -->
+    <script>
+    function initMap() {
+           var center = {lat:18.109581 , lng:77.297508 };
+           var points = [[18.407389, -77.103135], [18.476223, -77.89389], [18.407389, 77.103135], [13.063363, -59.543066], [13.13697, , -59.62272], [59.436961, 24.753575], [48.856614, 2.352222]];
+           var content = ["<img src='https://i.pinimg.com/originals/35/ab/e2/35abe2d7f329e87ca17bd9f3f08cb743.jpg'> <br><b> Kingston Jamaica </b> <br><em> Kingston the capital!</em>", "<img src='file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/ocho-rios-dunns-falls-climb.jpg'> <br><b> Ocho-rios </b> <br><em> Dunns River Waterfalls in Ocho-rios!  Beautiful site! </em>", "<img  src='https://images.trvl-media.com/hotels/3000000/2810000/2802600/2802581/2802581_164_z.jpg'> <br><b> Montego Bay </b> <br><em> Montego Bay is the capital of the parish of St James and is also Jamaica's only other officially incorporated city, referred to as The Second City or more widely known as MoBay in local lingo and sometimes Bay by the locals.</em>",
+           "<img src'file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/oistins_fishing_village.jpg'><br><b> Oistins, Barbados<br> <b><em> a tradition has developed toward the end of the 20th century for tourists in Oistins to join in with locals at the Friday night (and slightly quieter Saturday night) Fish Fry and lime (social gathering). </em>", "<img "\n" src='file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/bridgetown_barbados_parliament_building.jpg'> <br><b> Bridgetown Barbados </b> <br><em> Bridgetown, the capital of Barbados </em>","<img src='file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/tallin_estonia.jpg'> <br><b> Tallinn, Estonia </b> <br><em> I flew to Tallinn, "\n"
+           Estonia in a private plane with my 10 piecedisco band in 2001.</em>", "<img src='file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/eiffel-tower-in-paris-france.jpg'> <br><b> Eiffel Tower, France </b> <br><em>Paris, the capital of France, where the beautiful Eiffel Tower is located. </em>"];
+           var map = new google.maps.Map(document.getElementById('map'), {
+               zoom: 1,
+               center: center
+           });
+
+           for (i = 0; i < content.length; i++) {
+               var point = points[i];
+               var coords = {lat: point[0], lng: point[1]};
+               var contentString = content[i];
+               var infowindow = new google.maps.InfoWindow({
+                   content: contentString
+               });
+               var marker = new google.maps.StyledMarker({
+                   position: coords,
+                   map: map,
+                   html: contentString
+               });
+               marker.addListener('click', function() {
+                   infowindow.setContent(this.html);
+                   infowindow.open(map, this);
+               });
+           }
+       }
+    </script>
+    <!-- Images -->
+    <h1 class="title1"><a href="answers.html">Reverse Engineering - Project Compass</a></h1>
+    <section id="box">
+      <div class="container">
+        <div class="box1">
+          <div><h3>Snazzy Map</h3></div>
+        <script async defer
+          src="https://snazzymaps.com/build-a-map/edit/63240"></script>
+          <iframe src="https://snazzymaps.com/embed/63240" style="width:276px; height:183px; border:5px solid blue;"></iframe>
+        </div>
+        <br>
+        <div class="box1">
+          <h3>Kingson Jamaica!</h3>
+            <img src="https://i.pinimg.com/originals/35/ab/e2/35abe2d7f329e87ca17bd9f3f08cb743.jpg" alt="Kingston Jamaica" style="width:276px; height:183px; border:5px solid red;">
+            <p><h4>Kingston, the capital!</p></h4>
+        </div>
+        <br>
+            <div class="box1">
+              <h3>Ocho-rios Jamaica!</h3>
+                <img src="file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/ocho-rios-dunns-falls-climb.jpg" alt="Dunns River Waterfalls Ocho-rios Jamaica" style="width:276px; height:183px; border:5px solid red;">
+                <p><h4>Dunns River Waterfalls in Ocho-rios!  Beautiful site!</p></h4>
+            </div>
+        <br>
+            <div class="box1">
+              <h3>Montego Bay!</h3>
+                <img src="https://images.trvl-media.com/hotels/3000000/2810000/2802600/2802581/2802581_164_z.jpg" alt="Montego Bay" style="width:276px; height:183px; border:5px solid red;">
+                <p><h4>Montego Bay is the capital of the parish of St. James and is also Jamaica's only other officially incorporated city,
+                <h4>referred to as The Second City or more widely known as MoBay in local lingo and sometimes Bay by the locals.</p></h4>
+            </div>
+        <br>
+            <div class="box1">
+              <h3>Oistins Barbados!</h3>
+                <img src="file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/oistins_fishing_village.jpg" alt="Oistins Fish Bar" style="width:276px; height:183px; border:5px solid red;">
+                <p><h4>A tradition has developed toward the end of the 20th century for tourists in Oistins to join in with locals at the
+                <h4>Friday night (and slightly quieter Saturday night) Fish Fry and "lime" (social gathering).</p></h4>
+            </div>
+        <br>
+            <div class="box1">
+              <h3>Bridgetown Barbados!</h3>
+                <img src="file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/bridgetown_barbados_parliament_building.jpg" alt="Barbados Parliament Building" style="width:276px; height:183px; border:5px solid red;">
+                <p><h4>Bridgetown, the capital of Barbados, is a port city on the island’s southwest coast. It's known for its British colonial architecture,
+                <h4>The Barbados parliament building, 17th-century Garrison and horseracing track.</p></h4>
+            </div>
+        <br>
+            <div class="box1">
+              <h3>Tallinn Estonia!</h3><h4>(mouse-over image!)</h4>
+                <img src="file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/tallin_estonia.jpg" onmouseover="src='file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/estonia.jpg' "onmouseout="src='file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/tallin_estonia.jpg' "alt="Estonia" style="width:276px; height:183px; border:5px solid red;">
+                <p><h4>I flew to Tallinn, Estonia in a private plane with my 10 piece disco band in 2001.</p></h4>
+            </div>
+        <br>
+            <div class="box1">
+              <h3>Eiffel Tower, France!</h3>
+                <img src="file:/Users/greysmusic/Desktop/Udacity_discovering_your_path/p4-project-compass/my-international-travels/img/eiffel-tower-in-paris-france.jpg" alt="Eiffel Tower" style="width:276px; height:183px; border:5px solid red;">
+                <p><h4>Paris, the capital of France, where the beautiful Eiffel Tower is located.</p></h4>
+            </div>
+      </div>
+    </section>
+    <!--Footer-->
+    <footer>
+      <p> My International Travels, Copyright © 2018</p>
+    </footer>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Google Maps API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwAmD8g1eqSVxZHPPu3-ao0nVelFg0zAs&signed_in=true&callback=initMap"></script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
